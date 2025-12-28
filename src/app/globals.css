@@ -1,0 +1,250 @@
+/* Pretendard 폰트 CDN - 반드시 다른 @import보다 먼저 선언 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+@import "tailwindcss";
+
+:root {
+  /* sopoong BI 색상 */
+  --color-primary: #3258ee;
+  --color-primary-hover: #2847d4;
+  --color-secondary: #1b3fc3;
+  --color-success: #159a53;
+  --color-danger: #e0002e;
+
+  /* 텍스트 색상 */
+  --color-text: #061b37;
+  --color-text-secondary: #6c757d;
+  --color-text-muted: #9ca3af;
+
+  /* 배경 색상 */
+  --background: #ffffff;
+  --background-secondary: #f5f5f7;
+  --foreground: #061b37;
+
+  /* 레이아웃 */
+  --max-width-content: 720px;
+  --max-width-container: 1200px;
+
+  /* 폰트 */
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+}
+
+/* 기본 스타일 리셋 및 설정 */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* 한글 타이포그래피 최적화 */
+.korean-text {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  letter-spacing: -0.02em;
+  line-height: 1.8;
+}
+
+/* 아티클 콘텐츠 스타일 (핵심) */
+.article-content {
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding: 0 24px;
+  color: var(--color-text);
+}
+
+.article-content h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+}
+
+.article-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.article-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.article-content p {
+  margin-bottom: 24px;
+}
+
+.article-content strong {
+  font-weight: 600;
+}
+
+.article-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-content a:hover {
+  color: var(--color-primary-hover);
+}
+
+.article-content ul,
+.article-content ol {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.article-content li {
+  margin-bottom: 8px;
+}
+
+.article-content blockquote {
+  margin: 32px 0;
+  padding: 24px 32px;
+  background: var(--background-secondary);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 8px 8px 0;
+  font-style: normal;
+}
+
+.article-content blockquote p {
+  margin-bottom: 0;
+}
+
+/* 이미지 및 캡션 */
+.article-content figure {
+  margin: 32px 0;
+  text-align: center;
+}
+
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* 이미지 크기 클래스 - 에디터에서 수동 적용 가능 */
+.article-content img.img-full {
+  width: 100%;
+}
+
+.article-content img.img-75 {
+  width: 75%;
+}
+
+.article-content img.img-50 {
+  width: 50%;
+}
+
+.article-content img.img-25 {
+  width: 25%;
+}
+
+.article-content figcaption {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* 코드 블록 */
+.article-content code {
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 14px;
+  background: var(--background-secondary);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.article-content pre {
+  margin: 24px 0;
+  padding: 20px;
+  background: #1e1e1e;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.article-content pre code {
+  background: transparent;
+  padding: 0;
+  color: #e5e5e5;
+}
+
+/* 구분선 */
+.article-content hr {
+  margin: 48px 0;
+  border: none;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* 반응형 - 모바일 */
+@media (max-width: 768px) {
+  .article-content {
+    font-size: 16px;
+    padding: 0 16px;
+  }
+
+  .article-content h1 {
+    font-size: 26px;
+  }
+
+  .article-content h2 {
+    font-size: 22px;
+    margin-top: 40px;
+  }
+
+  .article-content h3 {
+    font-size: 18px;
+    margin-top: 28px;
+  }
+
+  .article-content blockquote {
+    padding: 16px 20px;
+    margin: 24px 0;
+  }
+}
+
+/* 유틸리티 클래스 */
+.container {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}
